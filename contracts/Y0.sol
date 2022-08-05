@@ -18,10 +18,10 @@ contract Y0 is ERC1155, Ownable {
   uint256 public super_car_count = 0;
   uint256 public extra_car_count = 0;
 
-  uint256 public normal_car_price = 11 ether;
-  uint256 public rare_car_price = 22 ether;
-  uint256 public super_car_price = 33 ether;
-  uint256 public extra_car_price = 44 ether; 
+  uint256 public normal_car_price = 0.0011 ether;
+  uint256 public rare_car_price = 0.0022 ether;
+  uint256 public super_car_price = 0.0033 ether;
+  uint256 public extra_car_price = 0.0044 ether; 
 
   uint256 public MAX_SUPPLY_NORMAL = 1600; 
   uint256 public MAX_SUPPLY_RARE = 400; 
@@ -195,7 +195,26 @@ contract Y0 is ERC1155, Ownable {
     payable(address(_wallet1)).transfer(balance1);
     payable(address(_wallet2)).transfer(balance2);
   }
-
+  /**
+    * Funtion to set Price in  Paper.xyz
+   */
+  function price(uint256  _mintType) public view returns (uint256) {
+     if (_mintType == 1) {
+      // Normal type NFT
+      return _mintType * normal_car_price;
+    } else if (_mintType == 2) {
+      // Rare type NFT
+      return _mintType * rare_car_price;
+    } else if (_mintType == 3) {
+      // Super type NFT
+      return _mintType * super_car_price;
+    } else if (_mintType == 4) {
+      // Extra type NFT
+      return _mintType * extra_car_price;
+    } else  {
+      require(false, 'This mint type does not exist');
+    }
+  }
   function reveal(address claimer, uint256 _typeId) public onlyOwner {
     require(mintTimeStamp[claimer][_typeId] > 0, 'You did not mint this type of NFTs');
     require((block.timestamp - mintTimeStamp[claimer][_typeId]) >= 1 minutes, 'NFT is revealed soon');

@@ -26,7 +26,6 @@
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
     "@openzeppelin/contracts": "^4.6.0",
     "dotenv": "^16.0.1",
-    "hardhat-test-utility": "^1.0.2",
-    "truffle-croned": "^1.0.4"
+    "hardhat-test-utility": "^1.0.2"
   }
 }
