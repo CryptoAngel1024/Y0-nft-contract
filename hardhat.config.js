@@ -28,13 +28,9 @@ const getHDWallet = () => {
 module.exports = {
   networks: {
     rinkeby: { 
-      url: "https://rinkeby.infura.io/v3/28b00c59a9334b749a81fbd27bd96343",
-      accounts: ["1b40ed37e7bb55dfd5a929ef57458137c6ce6b6b978c508260432deca5be5580"],
+      url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
+      accounts: [PRIVATE_KEY],
     },
-    ropsten: { 
-      url: "https://ropsten.infura.io/v3/28b00c59a9334b749a81fbd27bd96343",
-      accounts: ["1b40ed37e7bb55dfd5a929ef57458137c6ce6b6b978c508260432deca5be5580"],
-    }
   },
   etherscan: {
     // Your API key for Etherscan

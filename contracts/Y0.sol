@@ -98,7 +98,7 @@ contract Y0 is ERC1155, Ownable {
     * @param _num {uint256} number of mint for this transaction
     * @param _mintType {uint256} mintType (1: normal, 2: rare, 3: super, 4: extra )
    */
-  function mint(address _to, uint256 _num, uint256 _mintType) external payable {
+  function claimTo(address _to, uint256 _num, uint256 _mintType) external payable {
     require(isActive, 'Mint is not active');
     
     if (_mintType == 1) {

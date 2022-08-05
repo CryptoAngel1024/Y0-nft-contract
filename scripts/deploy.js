@@ -25,12 +25,12 @@ async function main() {
 
   const baseURI = `https://gateway.pinata.cloud/ipfs/${BASEURL}/`;  
   
-  const Car = await hre.ethers.getContractFactory("Car");
-  const car = await Car.deploy(baseURI, 10);
+  const Y0 = await hre.ethers.getContractFactory("Y0");
+  const y0 = await Y0.deploy(baseURI);
 
-  await car.deployed();
+  await y0.deployed();
 
-  console.log("CarNFT deployed to:", car.address);
+  console.log("CarNFT deployed to:", y0.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
