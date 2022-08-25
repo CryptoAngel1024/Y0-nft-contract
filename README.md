@@ -1,6 +1,6 @@
-# This is NFT mint smart contract based on ERC721A
+# This is NFT mint smart contract based on ERC1155
 
-How to configurate ERC721A smart contract project in hardhat
+How to configurate ERC1155 smart contract project in hardhat
 
 1. Create a new hardhat project.
 2. Install modules which need to run smart contract.(You can read hardhat doc to create new hardhat project.)
